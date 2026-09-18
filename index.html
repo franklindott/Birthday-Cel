@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Cel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Animated Background Orbs & Balloons -->
+  <div class="bg-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+  <div class="balloons-container" id="balloons"></div>
+
+  <main class="container">
+    <!-- PAGE 1: TYPEWRITER COVER -->
+    <div class="page active landing-page" id="page1" onclick="handlePage1Click()">
+      <div class="landing-container">
+        <div class="typewriter-container">
+          <span id="typewriterText" class="typewriter-text cursive-text"></span><span class="cursor">|</span>
+        </div>
+        <p class="tap-hint">✨ Click mo may magic ✨</p>
+      </div>
+    </div>
+
+    <!-- PAGE 2: FLOWERS & DIRECT MESSAGE -->
+    <div class="page" id="page2">
+      <header class="header">
+        <h1 class="glow-text">My Baby</h1>
+        <p class="subtitle">Flowers for You!</p>
+      </header>
+
+      <!-- Polaroid-Style Photo Container -->
+      <section class="photo-card">
+        <div class="photo-frame polaroid-card" id="photoFramePage2" title="Click to upload your favorite GIF or image!">
+          <div class="image-wrapper">
+            <img id="birthdayPhoto1" src="download.jpg" alt="Flower GIF" />
+            <div class="photo-overlay">
+              <span>Baby</span>
+            </div>
+          </div>
+          <div class="polaroid-caption">
+            <span>Birthday</span>
+          </div>
+        </div>
+        <input type="file" id="imageInput1" accept="image/*,.gif" style="display: none;" />
+      </section>
+
+      <!-- Direct Message -->
+      <section class="card-section">
+        <div class="direct-message-card">
+          <p class="message">
+            Hi baby, sorry eto muna mabibigay ko sa birthday mo. Promise I'll give you the real one! For now, sorry eto lang muna, hehehe! ❤️
+          </p>
+        </div>
+      </section>
+
+      <!-- Actions: Only Next button -->
+      <section class="actions">
+        <button class="btn next-btn" onclick="goToPage(3)">Next Mo</button>
+      </section>
+    </div>
+
+    <!-- PAGE 3: PHOTO FRAME & CAKE CANDLE BLOWING -->
+    <div class="page" id="page3">
+      <header class="header">
+        <h1 class="glow-text">Make a Wish!</h1>
+        <p class="subtitle">Magic happens when you blow out the candles! kaya mag wish ka muna bago mo i blow</p>
+      </header>
+
+      <!-- Photo Frame Container -->
+      <section class="photo-card">
+        <div class="photo-frame circle-frame" id="photoFramePage3" title="Click to change photo">
+          <img id="birthdayPhoto2" src="05d17087-2c7e-4413-8c1a-234cbc384c7b.jpg" alt="Birthday Girl" />
+          <div class="photo-overlay round-overlay">
+            <span>Pwede mo baguhin pic</span>
+          </div>
+        </div>
+        <input type="file" id="imageInput2" accept="image/*,.gif" style="display: none;" />
+      </section>
+
+      <!-- Cake Section -->
+      <section class="cake-section">
+        <p class="instruction" id="cakeInstruction">Blow mo malapit sa mic or pindutin mo 'yung cake, pero mas maganda kung i-i-blow mo siya</p>
+        <div class="cake" id="cake" title="Tap or blow to extinguish flames!">
+          <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+          </div>
+          <div class="frosting"></div>
+          <div class="cake-base"></div>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button class="btn back-btn" onclick="goToPage(2)">Go Back</button>
+      </section>
+    </div>
+
+    <!-- PAGE 4: FINAL MESSAGE -->
+    <div class="page" id="page4">
+      <header class="header">
+        <h1 class="glow-text">Your Wish Has Been Sent! 💖</h1>
+        <p class="subtitle">Here is a special message for you...</p>
+      </header>
+
+      <section class="card-section">
+        <div class="direct-message-card">
+          <p class="message">
+            Hi baby, Happy Birthday! Sana matupad lahat ng wishes and dreams mo, I'll pray for that. Always be happy!<br><br>
+            Hindi ko alam kung ano sasabihin ko, pero I always love you kahit lagi mo ako binubully at binubogbog pero I also love it, hehe! Sana 'wag ka na mahiya lalo na sa akin, tayo na 'to oh! Kumbaga may bitaw. Sana sa mga susunod, ipakita mo rin 'yung kulit mo sa akin katulad ng sa kanila. 'Yun lang, Happy Birthday ulit, I love you! ❤️.<br><br>
+            Ready ka na rin pala! Magda-date pa tayo, so I'll wait for that! 🥰
+          </p>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button class="btn confetti-btn" onclick="popConfetti()">Fireworks!</button>
+        <button class="btn back-btn" onclick="goToPage(3)">Go Back</button>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- Background Audio Elements -->
+  <audio id="bgMusic1" loop src="sweet.mp3" preload="auto"></audio>
+  <audio id="bgMusic2" loop src="nothin.mp3" preload="auto"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
